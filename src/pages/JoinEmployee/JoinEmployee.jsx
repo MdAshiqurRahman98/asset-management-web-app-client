@@ -139,7 +139,7 @@ const JoinEmployee = () => {
                     {errors.dob && <span className="text-red-500 text-right">Date of Birth is required</span>}
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn text-white bg-orange-500 hover:bg-orange-500 text-base normal-case">Sign up</button>
+                    <button className="btn text-white bg-[#FF444A] hover:bg-[#FF444A] text-base normal-case">Sign up</button>
                 </div>
             </form>
             {
@@ -148,7 +148,7 @@ const JoinEmployee = () => {
             {
                 success && <p className="text-green-500 text-right">{success}</p>
             }
-            <p className="text-center mt-4">Already joined as employee? <Link className="text-orange-500 font-bold" to="/login">Login</Link></p>
+            <p className="text-center mt-4">Already joined as employee? <Link className="text-[#FF444A] font-bold" to="/login">Login</Link></p>
             <p className="text-center mt-5 mb-7">--------- OR ---------</p>
             <p className="text-center mb-11"><button onClick={handleGoogleSignUp} className="btn btn-wide btn-outline rounded-3xl normal-case text-base hover:bg-white hover:text-black"><FcGoogle className="w-5 h-5 mt-1"></FcGoogle>Join with Google</button></p>
         </>

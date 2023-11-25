@@ -154,7 +154,7 @@ const JoinAdmin = () => {
                     {errors.package && <span className="text-red-500 text-right">Package is required</span>}
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn text-white bg-orange-500 hover:bg-orange-500 text-base normal-case">Sign up</button>
+                    <button className="btn text-white bg-[#FF444A] hover:bg-[#FF444A] text-base normal-case">Sign up</button>
                 </div>
             </form>
             {
@@ -163,7 +163,7 @@ const JoinAdmin = () => {
             {
                 success && <p className="text-green-500 text-right">{success}</p>
             }
-            <p className="text-center mt-4 mb-11">Already joined as HR/admin? <Link className="text-orange-500 font-bold" to="/login">Login</Link></p>
+            <p className="text-center mt-4 mb-11">Already joined as HR/admin? <Link className="text-[#FF444A] font-bold" to="/login">Login</Link></p>
         </>
     );
 };
