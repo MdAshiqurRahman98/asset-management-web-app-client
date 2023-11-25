@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
 import useAuth from './../../hooks/useAuth';
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const [loginError, setLoginError] = useState('');
@@ -74,7 +75,10 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <>
+            <Helmet>
+                <title>Login | Asset Management System</title>
+            </Helmet>
             <h2 className="text-3xl my-10 text-center">Please Login</h2>
             <form onSubmit={handleLogin} className=" md:w-3/4 lg:w-1/2 mx-auto">
                 <div className="form-control">
@@ -108,10 +112,10 @@ const Login = () => {
             {
                 success && <p className="text-green-700">{success}</p>
             }
-            <p className="text-center mt-4">Don`t join as employee or HR/admin yet? <Link className="text-orange-500 font-bold" to="/join-employee">Join as Employee</Link> <Link className="text-orange-500 font-bold" to="/join-admin">Join as HR/Admin</Link></p>
+            <p className="text-center mt-4">Don`t join as employee or HR/admin yet? <Link className="text-orange-500 font-bold" to="/join-employee">Join as Employee</Link> or <Link className="text-orange-500 font-bold" to="/join-admin">Join as HR/Admin</Link></p>
             <p className="text-center mt-5 mb-7">--------- OR ---------</p>
             <p className="text-center mb-11"><button onClick={handleGoogleSignIn} className="btn btn-wide btn-outline rounded-3xl normal-case text-base hover:bg-white hover:text-black"><FcGoogle className="w-5 h-5 mt-1"></FcGoogle>Login with Google</button></p>
-        </div>
+        </>
     );
 };
 

@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 import useAxiosPublic from './../../hooks/useAxiosPublic';
+import { updateProfile } from "firebase/auth";
 
 const JoinEmployee = () => {
     const [registerError, setRegisterError] = useState('');
@@ -12,7 +13,7 @@ const JoinEmployee = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const { createUser, signInWithGoogle, updateUserProfile } = useAuth();
+    const { createUser, signInWithGoogle } = useAuth();
 
     const axiosPublic = useAxiosPublic();
     const location = useLocation();
@@ -28,22 +29,25 @@ const JoinEmployee = () => {
             .then(result => {
                 console.log(result.user);
 
-                updateUserProfile(data.name, data.photoURL)
+                updateProfile(result.user, {
+                    displayName: data.name,
+                    photoURL: data.photo
+                })
                     .then(() => {
-                        const saveUser = { name: data.name, email: data.email };
+                        console.log('Profile updated');
+
+                        const saveUser = {
+                            name: data.name,
+                            email: data.email,
+                            dob: data.dob
+                        };
 
                         axiosPublic.put(`/api/v1/users/${data.email}`, saveUser)
                             .then(res => {
-                                if (res.data.modifiedCount > 0) {
-                                    reset();
-                                    setSuccess('Joined as Employee Successfully');
-                                    navigate(location?.state ? location.state : '/', { replace: true });
-                                }
-                                else if (res.data.modifiedCount === 0) {
-                                    reset();
-                                    setSuccess('Already Joined as Employee');
-                                    navigate(location?.state ? location.state : '/', { replace: true });
-                                }
+                                console.log(res.data);
+                                reset();
+                                setSuccess('Joined as Employee Successfully');
+                                navigate(location?.state ? location.state : '/', { replace: true });
                             })
                     })
                     .catch(error => {
@@ -79,9 +83,9 @@ const JoinEmployee = () => {
     }
 
     return (
-        <div>
+        <>
             <Helmet>
-                <title>Register | BlogHub</title>
+                <title>Join as Employee | Asset Management System</title>
             </Helmet>
             <h2 className="text-3xl my-10 text-center">Join as Employee</h2>
             <form onSubmit={handleSubmit(onSubmit)} className=" md:w-3/4 lg:w-1/2 mx-auto">
@@ -89,8 +93,8 @@ const JoinEmployee = () => {
                     <label className="label">
                         <span className="label-text font-medium">Full Name</span>
                     </label>
-                    <input type="text" {...register("fullName", { required: true })} placeholder="Type full name" className="input input-bordered" />
-                    {errors.fullName && <span className="text-red-500 text-right">Full Name is required</span>}
+                    <input type="text" {...register("name", { required: true })} placeholder="Type full name" className="input input-bordered" />
+                    {errors.name && <span className="text-red-500 text-right">Full Name is required</span>}
                 </div>
                 <div className="form-control">
                     <label className="label">
@@ -147,7 +151,7 @@ const JoinEmployee = () => {
             <p className="text-center mt-4">Already joined as employee? <Link className="text-orange-500 font-bold" to="/login">Login</Link></p>
             <p className="text-center mt-5 mb-7">--------- OR ---------</p>
             <p className="text-center mb-11"><button onClick={handleGoogleSignUp} className="btn btn-wide btn-outline rounded-3xl normal-case text-base hover:bg-white hover:text-black"><FcGoogle className="w-5 h-5 mt-1"></FcGoogle>Join with Google</button></p>
-        </div>
+        </>
     );
 };
 
