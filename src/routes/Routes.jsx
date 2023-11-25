@@ -6,6 +6,10 @@ import Login from "../pages/Login/Login";
 import JoinEmployee from "../pages/JoinEmployee/JoinEmployee";
 import JoinAdmin from "../pages/JoinAdmin/JoinAdmin";
 import Payment from "../pages/Payment/Payment";
+import EmployeeDashboard from "../layouts/employeeDashboard/employeeDashboard";
+import AdminDashboard from '../layouts/adminDashboard/adminDashboard';
+import EmployeeHome from "../pages/EmployeeDashboard/EmployeeHome/EmployeeHome";
+import AdminHome from "../pages/AdminDashboard/AdminHome/AdminHome";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +39,28 @@ const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: 'employeeDashboard',
+        element: <EmployeeDashboard></EmployeeDashboard>,
+        errorElement: <ErrorPage></ErrorPage>,
+        children: [
+            {
+                path: 'employeeHome',
+                element: <EmployeeHome></EmployeeHome>
+            }
+        ]
+    },
+    {
+        path: 'adminDashboard',
+        element: <AdminDashboard></AdminDashboard>,
+        errorElement: <ErrorPage></ErrorPage>,
+        children: [
+            {
+                path: 'adminHome',
+                element: <AdminHome></AdminHome>
+            }
+        ]
+    }
 ]);
 
 export default router;
