@@ -40,23 +40,23 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: 'employeeDashboard',
+        path: 'employee-dashboard',
         element: <EmployeeDashboard></EmployeeDashboard>,
         errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
-                path: 'employeeHome',
+                path: 'employee-home',
                 element: <EmployeeHome></EmployeeHome>
             }
         ]
     },
     {
-        path: 'adminDashboard',
+        path: 'admin-dashboard',
         element: <AdminDashboard></AdminDashboard>,
         errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
-                path: 'adminHome',
+                path: 'admin-home',
                 element: <AdminHome></AdminHome>
             }
         ]
