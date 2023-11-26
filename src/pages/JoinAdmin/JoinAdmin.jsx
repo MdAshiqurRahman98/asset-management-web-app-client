@@ -51,7 +51,8 @@ const JoinAdmin = () => {
                                 companyName: data.companyName, companyLogo: res.data.data.display_url,
                                 email: data.email,
                                 dob: data.dob,
-                                package: data.package
+                                package: data.package,
+                                role: 'admin'
                             };
 
                             axiosPublic.put(`/api/v1/users/${data.email}`, saveUser)
