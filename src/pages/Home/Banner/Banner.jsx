@@ -8,13 +8,13 @@ const Banner = () => {
             <Carousel>
                 <div className='relative'>
                     <img src='https://i.ibb.co/KbhPpSK/Join-HR-logo.jpg' />
-                    <Link>
+                    <Link to='/join-admin'>
                         <button className='btn btn-sm text-white bg-[#FF444A] hover:bg-[#FF444A] normal-case text-xs md:text-lg md:font-medium rounded-lg absolute top-[153px] right-[7px] md:top-[451px] md:right-7'>Join as HR/Admin</button>
                     </Link>
                 </div>
                 <div className='relative'>
                     <img src='https://i.ibb.co/YXXD45H/Join-as-an-employee.jpg' />
-                    <Link>
+                    <Link to='/join-employee'>
                         <button className='btn btn-sm text-white bg-[#FF444A] hover:bg-[#FF444A] normal-case text-xs md:text-lg md:font-medium rounded-lg absolute top-[141px] right-[7px] md:top-[421px] md:right-7'>Join as Employee</button>
                     </Link>
                 </div>
