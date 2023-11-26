@@ -38,6 +38,7 @@ const JoinEmployee = () => {
 
                         const saveUser = {
                             name: data.name,
+                            photoURL: data.photoURL,
                             email: data.email,
                             dob: data.dob
                         };
@@ -95,6 +96,13 @@ const JoinEmployee = () => {
                     </label>
                     <input type="text" {...register("name", { required: true })} placeholder="Type full name" className="input input-bordered" />
                     {errors.name && <span className="text-red-500 text-right">Full Name is required</span>}
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text font-medium">Photo URL</span>
+                    </label>
+                    <input type="text" {...register("photoURL", { required: true })} placeholder="Enter photo URL" className="input input-bordered" />
+                    {errors.photoURL && <span className="text-red-500 text-right">Photo URL is required</span>}
                 </div>
                 <div className="form-control">
                     <label className="label">
