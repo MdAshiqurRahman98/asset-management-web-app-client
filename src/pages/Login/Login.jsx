@@ -4,6 +4,7 @@ import { FcGoogle } from 'react-icons/fc';
 import useAuth from './../../hooks/useAuth';
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { Helmet } from "react-helmet-async";
+import useAdmin from "../../hooks/useAdmin";
 
 const Login = () => {
     const [loginError, setLoginError] = useState('');
@@ -11,6 +12,7 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const { signIn, signInWithGoogle } = useAuth();
+    const [isAdmin] = useAdmin();
     const axiosPublic = useAxiosPublic();
     const location = useLocation();
     const navigate = useNavigate();
@@ -46,7 +48,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 setSuccess('User Logged in Successfully');
-                navigate(location?.state ? location.state : '/', { replace: true });
+                navigate(isAdmin ? '/dashboard/admin-home' : '/dashboard/employee-home', { replace: true });
             })
             .catch(error => {
                 console.error(error);
@@ -65,7 +67,7 @@ const Login = () => {
                     .then(res => {
                         console.log(res.data);
                         setSuccess('Logged in Successfully');
-                        navigate(location?.state ? location.state : '/', { replace: true });
+                        navigate(isAdmin ? '/dashboard/admin-home' : '/dashboard/employee-home', { replace: true });
                     })
             })
             .catch(error => {
