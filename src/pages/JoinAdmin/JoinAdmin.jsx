@@ -61,7 +61,7 @@ const JoinAdmin = () => {
                                     console.log(res.data);
                                     reset();
                                     setSuccess('Joined as HR/Admin Successfully');
-                                    navigate(location?.state ? location.state : '/', { replace: true });
+                                    navigate('/dashboard/admin-home', { replace: true });
                                 })
                         })
                         .catch(error => {
@@ -76,7 +76,7 @@ const JoinAdmin = () => {
     return (
         <>
             <Helmet>
-                <title>Join as HR/Admin | Asset Management System</title>
+                <title>Join as HR/Admin | DigitalHub</title>
             </Helmet>
             <h2 className="text-3xl my-10 text-center">Join as HR/Admin</h2>
             <form onSubmit={handleSubmit(onSubmit)} className=" md:w-3/4 lg:w-1/2 mx-auto">

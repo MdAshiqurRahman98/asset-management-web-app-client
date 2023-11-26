@@ -143,7 +143,7 @@ const Dashboard = () => {
                             </ul>
                         </div>
 
-                        <figure className="hidden md:contents"><img className="w-[30px] h-[30px] mt-1 rounded-lg" src="https://i.ibb.co/VBzzqzb/Digital-Hub-logo.jpg" alt="Logo" /><span className="text-3xl font-bold text-[#FF444A] md:ml-3">DigitalHub</span></figure>
+                        <figure className="hidden md:contents"><img className="w-[30px] h-[30px] mt-1 rounded-lg" src="https://i.ibb.co/W3HkX2y/Smart-Tech-logo.webp" alt="Logo" /><span className="text-3xl font-bold text-[#FF444A] md:ml-3">SmartTech</span></figure>
 
                         <span onClick={changeTheme} className="text-xl ml-1 md:ml-7 mt-1">
                             {

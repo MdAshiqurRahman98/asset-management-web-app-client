@@ -48,7 +48,7 @@ const JoinEmployee = () => {
                                 console.log(res.data);
                                 reset();
                                 setSuccess('Joined as Employee Successfully');
-                                navigate(location?.state ? location.state : '/', { replace: true });
+                                navigate('/dashboard/employee-home', { replace: true });
                             })
                     })
                     .catch(error => {
@@ -69,11 +69,11 @@ const JoinEmployee = () => {
                     .then(res => {
                         if (res.data.message) {
                             setSuccess('Already Registered');
-                            navigate(location?.state ? location.state : '/', { replace: true });
+                            navigate('/dashboard/employee-home', { replace: true });
                         }
                         else {
                             setSuccess('Registered Successfully');
-                            navigate(location?.state ? location.state : '/', { replace: true });
+                            navigate('/dashboard/employee-home', { replace: true });
                         }
                     })
             })
@@ -86,7 +86,7 @@ const JoinEmployee = () => {
     return (
         <>
             <Helmet>
-                <title>Join as Employee | Asset Management System</title>
+                <title>Join as Employee | DigitalHub</title>
             </Helmet>
             <h2 className="text-3xl my-10 text-center">Join as Employee</h2>
             <form onSubmit={handleSubmit(onSubmit)} className=" md:w-3/4 lg:w-1/2 mx-auto">
