@@ -3,8 +3,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
-import useAxiosSecure from './../../hooks/useAxiosSecure';
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAuth from "../../hooks/useAuth";
+import { useQuery } from "@tanstack/react-query";
 
 const CheckoutForm = () => {
     const [error, setError] = useState('');
@@ -14,23 +15,29 @@ const CheckoutForm = () => {
     const elements = useElements();
     const axiosSecure = useAxiosSecure();
     const { user } = useAuth();
-    // const [cart, refetch] = useCart();
     const navigate = useNavigate();
 
-    // const totalPrice = cart.reduce((total, item) => total + item.price, 0);
-    const total = 15;
-    const totalPrice = parseInt(total);
+    const { data: singleUser } = useQuery({
+        queryKey: ['singleUser', user?.email],
+        queryFn: async () => {
+            const res = await axiosSecure.get(`/api/v1/users/${user.email}`);
+            return res.data;
+        }
+    })
+
+    const packagePrice = singleUser.package.split(' ')[4];
+    const packagePriceInt = parseInt(packagePrice);
 
     useEffect(() => {
-        if (totalPrice > 0) {
-            axiosSecure.post('/create-payment-intent', { price: totalPrice })
+        if (packagePriceInt > 0) {
+            axiosSecure.post('/api/v1/make-payment-intent', { price: packagePriceInt })
                 .then(res => {
                     console.log(res.data.clientSecret);
                     setClientSecret(res.data.clientSecret);
                 })
         }
 
-    }, [axiosSecure, totalPrice])
+    }, [axiosSecure, packagePriceInt])
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -83,17 +90,14 @@ const CheckoutForm = () => {
                 // Payment saved in the database
                 const payment = {
                     email: user.email,
-                    price: totalPrice,
+                    price: packagePriceInt,
                     transactionId: paymentIntent.id,
                     date: new Date(),
-                    // cartIds: cart.map(item => item._id),
-                    // menuItemIds: cart.map(item => item.menuId),
                     status: 'pending'
                 }
 
-                const res = await axiosSecure.post('/payments', payment);
+                const res = await axiosSecure.post('/api/v1/payments', payment);
                 console.log('Payment saved', res.data);
-                // refetch();
 
                 if (res.data?.paymentResult?.insertedId) {
                     Swal.fire({
@@ -104,7 +108,13 @@ const CheckoutForm = () => {
                         timer: 1500
                     });
 
-                    navigate('/paymentHistory');
+                    axiosSecure.patch(`/api/v1/users/admin/${user._id}`)
+                        .then(res => {
+                            console.log(res.data);
+                            if (res.data.modifiedCount > 0) {
+                                navigate('/dashboard/admin-home');
+                            }
+                        })
                 }
 
             }
@@ -134,7 +144,7 @@ const CheckoutForm = () => {
                 Pay
             </button>
             <p className="text-red-500">{error}</p>
-            {transactionId && <p className="text-green-500"> Your transaction id: {transactionId}</p>}
+            {transactionId && <p className="text-green-500"> Your transaction ID: {transactionId}</p>}
         </form>
     );
 };

@@ -52,16 +52,15 @@ const JoinAdmin = () => {
                                 companyName: data.companyName, companyLogo: res.data.data.display_url,
                                 email: data.email,
                                 dob: data.dob,
-                                package: data.package,
-                                role: 'admin'
+                                package: data.package
                             };
 
                             axiosPublic.put(`/api/v1/users/${data.email}`, saveUser)
                                 .then(res => {
                                     console.log(res.data);
                                     reset();
-                                    setSuccess('Joined as HR/Admin Successfully');
-                                    navigate('/dashboard/admin-home', { replace: true });
+                                    setSuccess('Signed up Successfully');
+                                    navigate('/payment', { replace: true });
                                 })
                         })
                         .catch(error => {
