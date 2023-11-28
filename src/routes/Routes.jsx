@@ -21,6 +21,8 @@ import AllRequests from './../pages/AdminDashboard/AllRequests/AllRequests';
 import CustomRequestsList from './../pages/AdminDashboard/CustomRequestsList/CustomRequestsList';
 import EmployeeProfile from './../pages/EmployeeDashboard/EmployeeProfile/EmployeeProfile';
 import AdminProfile from './../pages/AdminDashboard/AdminProfile/AdminProfile';
+import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
 
 const router = createBrowserRouter([
     {
@@ -52,43 +54,43 @@ const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         errorElement: <ErrorPage></ErrorPage>,
         children: [
             // Admin routes
             {
                 path: 'admin-home',
-                element: <AdminHome></AdminHome>
+                element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
             },
             {
                 path: 'asset-list',
-                element: <AssetList></AssetList>
+                element: <AdminRoute><AssetList></AssetList></AdminRoute>
             },
             {
                 path: 'add-asset',
-                element: <AddAsset></AddAsset>
+                element: <AdminRoute><AddAsset></AddAsset></AdminRoute>
             },
             {
                 path: 'all-requests',
-                element: <AllRequests></AllRequests>
+                element: <AdminRoute><AllRequests></AllRequests></AdminRoute>
             },
             {
                 path: 'custom-requests-list',
-                element: <CustomRequestsList></CustomRequestsList>
+                element: <AdminRoute><CustomRequestsList></CustomRequestsList></AdminRoute>
             },
             {
                 path: 'my-employee-list',
-                element: <MyEmployeeList></MyEmployeeList>
+                element: <AdminRoute><MyEmployeeList></MyEmployeeList></AdminRoute>
             },
             {
                 path: 'add-employee',
-                element: <AddEmployee></AddEmployee>
+                element: <AdminRoute><AddEmployee></AddEmployee></AdminRoute>
             },
             {
                 path: 'admin-profile',
-                element: <AdminProfile></AdminProfile>
+                element: <AdminRoute><AdminProfile></AdminProfile></AdminRoute>
             },
-            
+
             // Employee routes
             {
                 path: 'employee-home',

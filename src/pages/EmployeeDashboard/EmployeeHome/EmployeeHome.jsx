@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { Box, Button, Modal, Typography } from "@mui/material";
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const style = {
     position: 'absolute',
@@ -39,6 +40,9 @@ const EmployeeHome = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Employee Home | DigitalHub</title>
+            </Helmet>
             <div className="mb-11 ml-9">
                 <h3 className="text-3xl font-bold text-center mb-9">My Custom Requests</h3>
                 <div className="overflow-x-auto">
