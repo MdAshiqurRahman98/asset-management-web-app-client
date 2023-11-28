@@ -9,7 +9,7 @@ const useAsset = () => {
     const { data: assets = [], refetch } = useQuery({
         queryKey: ['assets'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/api/v1/assets');
+            const res = await axiosSecure.get(`/api/v1/assets?email=${user.email}`);
             return res.data;
         }
     })
