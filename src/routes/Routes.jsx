@@ -23,6 +23,7 @@ import EmployeeProfile from './../pages/EmployeeDashboard/EmployeeProfile/Employ
 import AdminProfile from './../pages/AdminDashboard/AdminProfile/AdminProfile';
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
+import UpdateAsset from "../pages/AdminDashboard/UpdateAsset/UpdateAsset";
 
 const router = createBrowserRouter([
     {
@@ -69,6 +70,11 @@ const router = createBrowserRouter([
             {
                 path: 'add-asset',
                 element: <AdminRoute><AddAsset></AddAsset></AdminRoute>
+            },
+            {
+                path: '/update-product/:id',
+                element: <AdminRoute><UpdateAsset></UpdateAsset></AdminRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/product/${params.id}`)
             },
             {
                 path: 'all-requests',
