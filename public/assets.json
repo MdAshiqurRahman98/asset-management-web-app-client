@@ -3,54 +3,60 @@
         "assetName": "Laptop",
         "assetPrice": 1200,
         "assetType": "returnable",
-        "assetImage": "laptop-image-url",
+        "assetImage": "https://i.ibb.co/wQHhbkM/Computer.webp",
         "whyNeeded": "Upgrade for better performance",
         "additionalInfo": "Requires higher processing power and more storage",
-        "status": "pending"
+        "status": "pending",
+        "assetDetails": "View Details"
     },
     {
         "assetName": "Pens",
         "assetPrice": 2,
         "assetType": "non-returnable",
-        "assetImage": "pens-image-url",
+        "assetImage": "https://i.ibb.co/k4kxYpB/Pens.webp",
         "whyNeeded": "Restocking office supplies",
         "additionalInfo": "Black ink preferred",
-        "status": "approved"
+        "status": "approved",
+        "assetDetails": "View Details"
     },
     {
         "assetName": "Desk",
         "assetPrice": 350,
         "assetType": "returnable",
-        "assetImage": "desk-image-url",
+        "assetImage": "https://i.ibb.co/TMS7JPb/Desk.webp",
         "whyNeeded": "Workspace expansion",
         "additionalInfo": "Needs to accommodate dual monitors",
-        "status": "pending"
+        "status": "pending",
+        "assetDetails": "View Details"
     },
     {
         "assetName": "Cell Phones",
         "assetPrice": 800,
         "assetType": "returnable",
-        "assetImage": "phones-image-url",
+        "assetImage": "https://i.ibb.co/KsJ8mfN/phone.jpg",
         "whyNeeded": "Mobile device upgrade",
         "additionalInfo": "Require latest iOS/Android versions",
-        "status": "approved"
+        "status": "approved",
+        "assetDetails": "View Details"
     },
     {
         "assetName": "Diaries",
         "assetPrice": 5,
         "assetType": "non-returnable",
-        "assetImage": "diaries-image-url",
+        "assetImage": "https://i.ibb.co/4tYjDhC/Diaries.jpg",
         "whyNeeded": "Yearly office supplies renewal",
         "additionalInfo": "Prefer hardcover",
-        "status": "approved"
+        "status": "approved",
+        "assetDetails": "View Details"
     },
     {
         "assetName": "Chair",
         "assetPrice": 150,
         "assetType": "returnable",
-        "assetImage": "chair-image-url",
+        "assetImage": "https://i.ibb.co/3cH5GQk/Chair.jpg",
         "whyNeeded": "Ergonomic seating for improved comfort",
         "additionalInfo": "Requires adjustable height and lumbar support",
-        "status": "pending"
+        "status": "pending",
+        "assetDetails": "View Details"
     }
 ]

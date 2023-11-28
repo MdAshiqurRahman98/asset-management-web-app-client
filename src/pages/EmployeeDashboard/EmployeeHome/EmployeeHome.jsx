@@ -19,8 +19,14 @@ const style = {
 
 const EmployeeHome = () => {
     const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+
+    const handleOpen = (assetId) => {
+        setOpen(assetId);
+    };
+
+    const handleClose = () => {
+        setOpen(null);
+    };
 
     const axiosSecure = useAxiosSecure();
     const { data: assets = [] } = useQuery({
@@ -55,16 +61,16 @@ const EmployeeHome = () => {
                                     <td>{asset.assetType}</td>
                                     <td>{asset.status}</td>
                                     <td>
-                                        <Button onClick={handleOpen} variant="contained" size="small" color="error">View Details</Button>
+                                        <Button onClick={() => handleOpen(asset._id)} variant="contained" size="small" color="error">View Details</Button>
                                         <Modal
-                                            open={open}
+                                            open={open === asset._id}
                                             onClose={handleClose}
                                             aria-labelledby="modal-modal-title"
                                             aria-describedby="modal-modal-description"
                                         >
                                             <Box sx={style}>
                                                 <Typography id="modal-modal-title" variant="h6" component="h2">
-                                                    {asset.assetImage}
+                                                    <img className="w-80 h-3/5 object-cover" src={asset.assetImage} alt="Image" />
                                                 </Typography>
                                                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                                                     Asset name: {asset.assetName}
