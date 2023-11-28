@@ -31,7 +31,7 @@ const JoinEmployee = () => {
 
                 updateProfile(result.user, {
                     displayName: data.name,
-                    photoURL: data.photo
+                    photoURL: data.photoURL
                 })
                     .then(() => {
                         console.log('Profile updated');
