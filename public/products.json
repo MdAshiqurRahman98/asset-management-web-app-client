@@ -1,0 +1,32 @@
+[
+    {
+        "productName": "Laptop",
+        "productType": "returnable",
+        "productQuantity": 20
+    },
+    {
+        "productName": "Pens",
+        "productType": "non-returnable",
+        "productQuantity": 500
+    },
+    {
+        "productName": "Desk",
+        "productType": "returnable",
+        "productQuantity": 10
+    },
+    {
+        "productName": "Cell Phones",
+        "productType": "returnable",
+        "productQuantity": 15
+    },
+    {
+        "productName": "Diaries",
+        "productType": "non-returnable",
+        "productQuantity": 100
+    },
+    {
+        "productName": "Chair",
+        "productType": "returnable",
+        "productQuantity": 30
+    }
+]

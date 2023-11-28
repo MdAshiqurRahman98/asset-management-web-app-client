@@ -5,7 +5,7 @@ const Footer = () => {
         <footer className="footer p-10 text-white">
             <aside className="mt-7">
                 <figure><img className="w-[30px] h-[30px] rounded-lg" src="https://i.ibb.co/VBzzqzb/Digital-Hub-logo.jpg" alt="Logo" /></figure>
-                <p>DigitalHub<br />Copyright &copy; {new Date().getFullYear()} DigitalHub | All rights reserved.</p>
+                <p>DigitalHub<br />Copyright &copy; {new Date().getUTCFullYear()} DigitalHub | All rights reserved.</p>
             </aside>
             <nav>
                 <header className="footer-title">Packages</header>

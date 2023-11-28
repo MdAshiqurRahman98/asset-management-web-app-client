@@ -1,0 +1,56 @@
+[
+    {
+        "assetName": "Laptop",
+        "assetPrice": 1200,
+        "assetType": "returnable",
+        "assetImage": "laptop-image-url",
+        "whyNeeded": "Upgrade for better performance",
+        "additionalInfo": "Requires higher processing power and more storage",
+        "status": "pending"
+    },
+    {
+        "assetName": "Pens",
+        "assetPrice": 2,
+        "assetType": "non-returnable",
+        "assetImage": "pens-image-url",
+        "whyNeeded": "Restocking office supplies",
+        "additionalInfo": "Black ink preferred",
+        "status": "approved"
+    },
+    {
+        "assetName": "Desk",
+        "assetPrice": 350,
+        "assetType": "returnable",
+        "assetImage": "desk-image-url",
+        "whyNeeded": "Workspace expansion",
+        "additionalInfo": "Needs to accommodate dual monitors",
+        "status": "pending"
+    },
+    {
+        "assetName": "Cell Phones",
+        "assetPrice": 800,
+        "assetType": "returnable",
+        "assetImage": "phones-image-url",
+        "whyNeeded": "Mobile device upgrade",
+        "additionalInfo": "Require latest iOS/Android versions",
+        "status": "approved"
+    },
+    {
+        "assetName": "Diaries",
+        "assetPrice": 5,
+        "assetType": "non-returnable",
+        "assetImage": "diaries-image-url",
+        "whyNeeded": "Yearly office supplies renewal",
+        "additionalInfo": "Prefer hardcover",
+        "status": "approved"
+    },
+    {
+        "assetName": "Chair",
+        "assetPrice": 150,
+        "assetType": "returnable",
+        "assetImage": "chair-image-url",
+        "whyNeeded": "Ergonomic seating for improved comfort",
+        "additionalInfo": "Requires adjustable height and lumbar support",
+        "status": "pending"
+    }
+]

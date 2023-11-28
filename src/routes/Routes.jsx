@@ -55,32 +55,6 @@ const router = createBrowserRouter([
         element: <Dashboard></Dashboard>,
         errorElement: <ErrorPage></ErrorPage>,
         children: [
-            // Employee routes
-            {
-                path: 'employee-home',
-                element: <EmployeeHome></EmployeeHome>
-            },
-            {
-                path: 'my-assets',
-                element: <MyAssets></MyAssets>
-            },
-            {
-                path: 'my-team',
-                element: <MyTeam></MyTeam>
-            },
-            {
-                path: 'request-asset',
-                element: <RequestAsset></RequestAsset>
-            },
-            {
-                path: 'make-custom-request',
-                element: <MakeCustomRequest></MakeCustomRequest>
-            },
-            {
-                path: 'employee-profile',
-                element: <EmployeeProfile></EmployeeProfile>
-            },
-
             // Admin routes
             {
                 path: 'admin-home',
@@ -113,6 +87,32 @@ const router = createBrowserRouter([
             {
                 path: 'admin-profile',
                 element: <AdminProfile></AdminProfile>
+            },
+            
+            // Employee routes
+            {
+                path: 'employee-home',
+                element: <EmployeeHome></EmployeeHome>
+            },
+            {
+                path: 'my-assets',
+                element: <MyAssets></MyAssets>
+            },
+            {
+                path: 'my-team',
+                element: <MyTeam></MyTeam>
+            },
+            {
+                path: 'request-asset',
+                element: <RequestAsset></RequestAsset>
+            },
+            {
+                path: 'make-custom-request',
+                element: <MakeCustomRequest></MakeCustomRequest>
+            },
+            {
+                path: 'employee-profile',
+                element: <EmployeeProfile></EmployeeProfile>
             }
         ]
     }

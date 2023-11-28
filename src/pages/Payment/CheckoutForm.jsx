@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAuth from "../../hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
+import { Button } from "@mui/material";
 
 const CheckoutForm = () => {
     const [error, setError] = useState('');
@@ -21,12 +22,11 @@ const CheckoutForm = () => {
         queryKey: ['singleUser', user?.email],
         queryFn: async () => {
             const res = await axiosSecure.get(`/api/v1/users/${user.email}`);
-            return res.data;
+            return res.data?.packagePrice;
         }
     })
 
-    const packagePrice = singleUser.package.split(' ')[4];
-    const packagePriceInt = parseInt(packagePrice);
+    const packagePriceInt = parseInt(singleUser);
 
     useEffect(() => {
         if (packagePriceInt > 0) {
@@ -108,13 +108,7 @@ const CheckoutForm = () => {
                         timer: 1500
                     });
 
-                    axiosSecure.patch(`/api/v1/users/admin/${user._id}`)
-                        .then(res => {
-                            console.log(res.data);
-                            if (res.data.modifiedCount > 0) {
-                                navigate('/dashboard/admin-home');
-                            }
-                        })
+                    navigate('/dashboard/admin-home');
                 }
 
             }
@@ -140,9 +134,11 @@ const CheckoutForm = () => {
                     },
                 }}
             />
-            <button className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A] my-5" type="submit" disabled={!stripe || !clientSecret}>
-                Pay
-            </button>
+            <div className="flex justify-center mt-32 mb-9">
+                <Button variant="contained" size="small" color="error" type="submit" disabled={!stripe || !clientSecret}>
+                    Pay
+                </Button>
+            </div>
             <p className="text-red-500">{error}</p>
             {transactionId && <p className="text-green-500"> Your transaction ID: {transactionId}</p>}
         </form>
