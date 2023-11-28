@@ -48,13 +48,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 setSuccess('User Logged in Successfully');
-
-                if (isAdmin) {
-                    navigate('/dashboard/admin-home', { replace: true });
-                }
-                else {
-                    navigate('/dashboard/employee-home', { replace: true });
-                }
+                navigate(isAdmin ? '/dashboard/admin-home' : '/dashboard/employee-home', { replace: true });
             })
             .catch(error => {
                 console.error(error);
@@ -73,13 +67,7 @@ const Login = () => {
                     .then(res => {
                         console.log(res.data);
                         setSuccess('Logged in Successfully');
-
-                        if (isAdmin) {
-                            navigate('/dashboard/admin-home', { replace: true });
-                        }
-                        else {
-                            navigate('/dashboard/employee-home', { replace: true });
-                        }
+                        navigate(isAdmin ? '/dashboard/admin-home' : '/dashboard/employee-home', { replace: true });
                     })
             })
             .catch(error => {
