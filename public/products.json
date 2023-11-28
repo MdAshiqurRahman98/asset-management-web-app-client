@@ -1,32 +1,32 @@
 [
     {
         "productName": "Laptop",
-        "productType": "returnable",
+        "productType": "Returnable",
         "productQuantity": 20
     },
     {
         "productName": "Pens",
-        "productType": "non-returnable",
+        "productType": "Non-returnable",
         "productQuantity": 500
     },
     {
         "productName": "Desk",
-        "productType": "returnable",
+        "productType": "Returnable",
         "productQuantity": 10
     },
     {
         "productName": "Cell Phones",
-        "productType": "returnable",
+        "productType": "Returnable",
         "productQuantity": 15
     },
     {
         "productName": "Diaries",
-        "productType": "non-returnable",
+        "productType": "Non-returnable",
         "productQuantity": 100
     },
     {
         "productName": "Chair",
-        "productType": "returnable",
+        "productType": "Returnable",
         "productQuantity": 30
     }
 ]

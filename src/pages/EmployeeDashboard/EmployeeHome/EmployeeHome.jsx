@@ -77,9 +77,9 @@ const EmployeeHome = () => {
                                                     <br />
                                                     Additional information: {asset.additionalInfo}
                                                     <br />
-                                                    Request date: {new Date().getUTCFullYear()}
+                                                    Request date: {asset.timestamp}
                                                     <br />
-                                                    Status: {asset.status}
+                                                    Status: {asset.status || 'Pending'}
                                                 </Typography>
                                             </Box>
                                         </Modal>

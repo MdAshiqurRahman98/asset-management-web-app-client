@@ -5,13 +5,13 @@ import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
 const MakeCustomRequest = () => {
-    const [assetType, setAssetType] = useState("");
+    const [assetTypeValue, setAssetTypeValue] = useState("");
     const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
 
     const handleAssetType = event => {
         console.log(event.target.value);
-        setAssetType(event.target.value);
+        setAssetTypeValue(event.target.value);
     };
 
     const getCurrentTimestamp = () => {
@@ -19,7 +19,7 @@ const MakeCustomRequest = () => {
         return currentDate.toISOString();
     }
 
-    const handleAddBlog = event => {
+    const handleMakeCustomRequest = event => {
         event.preventDefault();
 
         const form = event.target;
@@ -59,7 +59,7 @@ const MakeCustomRequest = () => {
             </Helmet>
             <div className="mb-11 ml-11">
                 <h3 className="text-3xl font-bold mb-11">Make a Custom Request</h3>
-                <form onSubmit={handleAddBlog}>
+                <form onSubmit={handleMakeCustomRequest}>
                     {/* form email and asset name row */}
                     <div className="md:flex mb-8">
                         <div className="form-control md:w-1/2">
@@ -94,7 +94,7 @@ const MakeCustomRequest = () => {
                                 <span className="label-text">Asset Type</span>
                             </label>
                             <label className='input-group'>
-                                <select value={assetType} onChange={handleAssetType} name="category" id="" className="input input-bordered w-full">
+                                <select value={assetTypeValue} onChange={handleAssetType} name="assetType" id="" className="input input-bordered w-full">
                                     <option value="Returnable">Returnable</option>
                                     <option value="Non-returnable">Non-returnable</option>
                                 </select>
