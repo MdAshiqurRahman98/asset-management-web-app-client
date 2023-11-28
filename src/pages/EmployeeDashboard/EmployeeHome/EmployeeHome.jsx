@@ -1,8 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { Box, Button, Modal, Typography } from "@mui/material";
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import useAsset from "../../../hooks/useAsset";
 
 const style = {
     position: 'absolute',
@@ -20,6 +19,7 @@ const style = {
 
 const EmployeeHome = () => {
     const [open, setOpen] = React.useState(false);
+    const [assets] = useAsset();
 
     const handleOpen = (assetId) => {
         setOpen(assetId);
@@ -28,15 +28,6 @@ const EmployeeHome = () => {
     const handleClose = () => {
         setOpen(null);
     };
-
-    const axiosSecure = useAxiosSecure();
-    const { data: assets = [] } = useQuery({
-        queryKey: ['assets'],
-        queryFn: async () => {
-            const res = await axiosSecure.get('/api/v1/assets');
-            return res.data;
-        }
-    })
 
     return (
         <>
