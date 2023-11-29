@@ -55,6 +55,23 @@ const MyAssets = () => {
             })
     }
 
+    const handleReturn = _id => {
+        axiosSecure.patch(`/api/v1/assets/return-asset/${_id}`)
+            .then(res => {
+                console.log(res.data)
+                if (res.data.modifiedCount > 0) {
+                    refetch();
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `Request Approved Successfully`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
+    }
+
     return (
         <>
             <Helmet>
@@ -85,7 +102,7 @@ const MyAssets = () => {
                                     <td>{asset.status}</td>
                                     <td>
                                         {
-                                            asset.status === 'pending' ? <button onClick={() => handleCancel(asset._id)} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Cancel</button> : asset.status === 'approved' ? <button className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Print</button> : asset.status === 'approved' && asset.assetType === 'Returnable' ? <button className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Return</button> : <button onClick={() => handleRemove(asset._id)} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Remove</button>
+                                            asset.status === 'pending' ? <button onClick={() => handleCancel(asset._id)} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Cancel</button> : asset.status === 'approved' && asset.assetType === 'Returnable' ? <button onClick={() => handleReturn(asset._id)} disabled={asset.status === 'returned'} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Return</button> : asset.status === 'approved' ? <button className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Print</button> : <button onClick={() => handleRemove(asset._id)} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Remove</button>
                                         }
                                     </td>
                                 </tr>)
