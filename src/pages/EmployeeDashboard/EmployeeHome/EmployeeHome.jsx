@@ -2,6 +2,7 @@ import { Box, Button, Modal, Typography } from "@mui/material";
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import useAsset from "../../../hooks/useAsset";
+import { Link } from "react-router-dom";
 
 const style = {
     position: 'absolute',
@@ -65,7 +66,7 @@ const EmployeeHome = () => {
                                         >
                                             <Box sx={style}>
                                                 <Typography id="modal-modal-title" variant="h6" component="h2">
-                                                    <img className="w-80 h-3/5 object-cover" src={asset.assetImage} alt="Image" />
+                                                    <img className="w-80 h-72" src={asset.assetImage} alt="Image" />
                                                 </Typography>
                                                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                                                     Asset name: {asset.assetName}
@@ -79,7 +80,14 @@ const EmployeeHome = () => {
                                                     <br />
                                                     Request date: {asset.timestamp}
                                                     <br />
-                                                    Status: {asset.status || 'Pending'}
+                                                    Status: {asset.status}
+                                                    <br />
+                                                    <br />
+                                                    <div className="flex justify-center">
+                                                        <Link to={`/dashboard/update-custom-request/${asset._id}`}>
+                                                            <button className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Update Request</button>
+                                                        </Link>
+                                                    </div>
                                                 </Typography>
                                             </Box>
                                         </Modal>

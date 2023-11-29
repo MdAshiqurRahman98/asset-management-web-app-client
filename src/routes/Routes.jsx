@@ -119,6 +119,11 @@ const router = createBrowserRouter([
                 element: <MakeCustomRequest></MakeCustomRequest>
             },
             {
+                path: 'update-custom-request/:id',
+                element: <AdminRoute><UpdateAsset></UpdateAsset></AdminRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/asset/${params.id}`)
+            },
+            {
                 path: 'employee-profile',
                 element: <EmployeeProfile></EmployeeProfile>
             }

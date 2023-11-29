@@ -5,8 +5,7 @@
         "assetType": "Returnable",
         "assetImage": "https://i.ibb.co/wQHhbkM/Computer.webp",
         "whyNeeded": "Upgrade for better performance",
-        "additionalInfo": "Requires higher processing power and more storage",
-        "status": "pending"
+        "additionalInfo": "Requires higher processing power and more storage"
     },
     {
         "assetName": "Pens",
@@ -14,8 +13,7 @@
         "assetType": "Non-returnable",
         "assetImage": "https://i.ibb.co/k4kxYpB/Pens.webp",
         "whyNeeded": "Restocking office supplies",
-        "additionalInfo": "Black ink preferred",
-        "status": "approved"
+        "additionalInfo": "Black ink preferred"
     },
     {
         "assetName": "Desk",
@@ -23,8 +21,7 @@
         "assetType": "Returnable",
         "assetImage": "https://i.ibb.co/TMS7JPb/Desk.webp",
         "whyNeeded": "Workspace expansion",
-        "additionalInfo": "Needs to accommodate dual monitors",
-        "status": "pending"
+        "additionalInfo": "Needs to accommodate dual monitors"
     },
     {
         "assetName": "Cell Phones",
@@ -32,8 +29,7 @@
         "assetType": "Returnable",
         "assetImage": "https://i.ibb.co/KsJ8mfN/phone.jpg",
         "whyNeeded": "Mobile device upgrade",
-        "additionalInfo": "Require latest iOS/Android versions",
-        "status": "approved"
+        "additionalInfo": "Require latest iOS/Android versions"
     },
     {
         "assetName": "Diaries",
@@ -41,8 +37,7 @@
         "assetType": "Non-returnable",
         "assetImage": "https://i.ibb.co/4tYjDhC/Diaries.jpg",
         "whyNeeded": "Yearly office supplies renewal",
-        "additionalInfo": "Prefer hardcover",
-        "status": "approved"
+        "additionalInfo": "Prefer hardcover"
     },
     {
         "assetName": "Chair",
@@ -50,7 +45,6 @@
         "assetType": "Returnable",
         "assetImage": "https://i.ibb.co/3cH5GQk/Chair.jpg",
         "whyNeeded": "Ergonomic seating for improved comfort",
-        "additionalInfo": "Requires adjustable height and lumbar support",
-        "status": "pending"
+        "additionalInfo": "Requires adjustable height and lumbar support"
     }
 ]

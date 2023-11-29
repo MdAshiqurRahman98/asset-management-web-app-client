@@ -82,10 +82,14 @@ const CustomRequestsList = () => {
                                     <td>{asset.whyNeeded}</td>
                                     <td>{asset.additionalInfo}</td>
                                     <td>
-                                        <button onClick={() => handleRequestApprove(asset._id)} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Approve</button>
+                                        {
+                                            asset.status === 'approved' ? 'Approved' : <button onClick={() => handleRequestApprove(asset._id)} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Approve</button>
+                                        }
                                     </td>
                                     <td>
-                                        <button onClick={() => handleRequestReject(asset._id)} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Reject</button>
+                                        {
+                                            asset.status === 'rejected' ? 'Rejected' : <button onClick={() => handleRequestReject(asset._id)} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Reject</button>
+                                        }
                                     </td>
                                 </tr>)
                             }

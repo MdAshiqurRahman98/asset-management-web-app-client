@@ -48,7 +48,16 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 setSuccess('User Logged in Successfully');
-                navigate(isAdmin ? '/dashboard/admin-home' : '/dashboard/employee-home', { replace: true });
+                navigate(isAdmin ? '/dashboard/admin-home' : '/dashboard/employee-home');
+
+                // const navigateBasedOnRole = async (isAdmin) => {
+                //     const targetURL = isAdmin ? '/dashboard/admin-home' : '/dashboard/employee-home';
+
+                //     await navigate(targetURL, { replace: true });
+                //     console.log(`Navigated to ${targetURL}`);
+                // };
+
+                // navigateBasedOnRole(true);
             })
             .catch(error => {
                 console.error(error);
@@ -67,7 +76,7 @@ const Login = () => {
                     .then(res => {
                         console.log(res.data);
                         setSuccess('Logged in Successfully');
-                        navigate(isAdmin ? '/dashboard/admin-home' : '/dashboard/employee-home', { replace: true });
+                        navigate(isAdmin ? '/dashboard/admin-home' : '/dashboard/employee-home');
                     })
             })
             .catch(error => {
