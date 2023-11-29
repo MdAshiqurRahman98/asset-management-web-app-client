@@ -31,7 +31,7 @@ const UpdateCustomRequest = () => {
         const whyNeeded = form.whyNeeded.value;
         const additionalInfo = form.additionalInfo.value;
 
-        const updatedAsset = { email, assetName, assetPrice, assetType, assetImage, whyNeeded, additionalInfo, status: 'pending' };
+        const updatedAsset = { email, assetName, assetPrice, assetType, assetImage, whyNeeded, additionalInfo };
 
         console.log(updatedAsset);
 

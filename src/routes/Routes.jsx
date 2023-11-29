@@ -24,6 +24,7 @@ import AdminProfile from './../pages/AdminDashboard/AdminProfile/AdminProfile';
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import UpdateAsset from "../pages/AdminDashboard/UpdateAsset/UpdateAsset";
+import UpdateCustomRequest from "../pages/EmployeeDashboard/UpdateCustomRequest/UpdateCustomRequest";
 
 const router = createBrowserRouter([
     {
@@ -120,7 +121,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'update-custom-request/:id',
-                element: <AdminRoute><UpdateAsset></UpdateAsset></AdminRoute>,
+                element: <UpdateCustomRequest></UpdateCustomRequest>,
                 loader: ({ params }) => fetch(`http://localhost:5000/api/v1/asset/${params.id}`)
             },
             {
