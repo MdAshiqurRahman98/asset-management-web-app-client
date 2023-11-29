@@ -72,7 +72,7 @@ const router = createBrowserRouter([
                 element: <AdminRoute><AddAsset></AddAsset></AdminRoute>
             },
             {
-                path: '/update-product/:id',
+                path: 'update-product/:id',
                 element: <AdminRoute><UpdateAsset></UpdateAsset></AdminRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/api/v1/product/${params.id}`)
             },

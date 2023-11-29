@@ -36,14 +36,13 @@ const UpdateAsset = () => {
         axiosSecure.patch(`/api/v1/update-product/${_id}?email=${user?.email}`, updatedProduct)
             .then(res => {
                 console.log(res.data);
-                if (res.data.insertedId) {
+                if (res.data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
                         text: 'Asset Updated Successfully',
                         icon: 'success',
                         confirmButtonText: 'OK'
                     })
-                    form.reset();
                 }
             })
     }
@@ -51,10 +50,10 @@ const UpdateAsset = () => {
     return (
         <>
             <Helmet>
-                <title>Add an Asset | DigitalHub</title>
+                <title>Update an Asset | DigitalHub</title>
             </Helmet>
             <div className="mb-11 ml-11">
-                <h3 className="text-3xl font-bold mb-11">Add an Asset</h3>
+                <h3 className="text-3xl font-bold mb-11">Update an Asset</h3>
                 <form onSubmit={handleUpdateAsset}>
                     {/* form email and product name row */}
                     <div className="md:flex mb-8">

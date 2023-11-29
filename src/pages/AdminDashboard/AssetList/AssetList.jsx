@@ -23,7 +23,7 @@ const AssetList = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axiosSecure.delete(`/remove-from-wishlist/${_id}?email=${user?.email}`)
+                axiosSecure.delete(`/api/v1/delete-product/${_id}?email=${user?.email}`)
                     .then(res => {
                         console.log(res.data);
                         if (res.data.deletedCount > 0) {
@@ -67,7 +67,7 @@ const AssetList = () => {
                                     <td>{product.productQuantity}</td>
                                     <td>{product.timestamp}</td>
                                     <td>
-                                        <Link to={`/update-product/${product._id}`}>
+                                        <Link to={`/dashboard/update-product/${product._id}`}>
                                             <button className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Update</button>
                                         </Link>
                                     </td>
