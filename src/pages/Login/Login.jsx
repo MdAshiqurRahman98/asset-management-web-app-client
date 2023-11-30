@@ -97,13 +97,13 @@ const Login = () => {
                         <label className="label">
                             <span className="label-text font-medium">Email</span>
                         </label>
-                        <input type="email" required name="email" placeholder="Email" className="input input-bordered" />
+                        <input type="email" required name="email" placeholder="Enter email address" className="input input-bordered" />
                     </div>
                     <div className="form-control relative">
                         <label className="label">
                             <span className="label-text font-medium">Password</span>
                         </label>
-                        <input type={showPassword ? "text" : "password"} required name="password" placeholder="Password" className="input input-bordered" />
+                        <input type={showPassword ? "text" : "password"} required name="password" placeholder="Enter password" className="input input-bordered" />
                         <span className="absolute top-12 right-5 text-gray-500" onClick={() => setShowPassword(!showPassword)}>
                             {
                                 showPassword ? 'Hide' : 'Show'

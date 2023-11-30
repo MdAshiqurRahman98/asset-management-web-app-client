@@ -118,7 +118,7 @@ const JoinAdmin = () => {
                         <input type="email" {...register("email", {
                             required: true,
                             pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-                        })} placeholder="Type email" className="input input-bordered" />
+                        })} placeholder="Enter email address" className="input input-bordered" />
                         {errors.email?.type === 'required' && <span className="text-red-500 text-right">Email is required</span>}
                         {errors.email?.type === 'pattern' && <span className="text-red-500">Please write a valid email</span>}
                     </div>

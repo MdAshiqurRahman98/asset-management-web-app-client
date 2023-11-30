@@ -14,7 +14,7 @@ import MyAssets from './../pages/EmployeeDashboard/MyAssets/MyAssets';
 import RequestAsset from './../pages/EmployeeDashboard/RequestAsset/RequestAsset';
 import MakeCustomRequest from './../pages/EmployeeDashboard/MakeCustomRequest/MakeCustomRequest';
 import MyEmployeeList from './../pages/AdminDashboard/MyEmployeeList/MyEmployeeList';
-import AddEmployee from './../pages/AdminDashboard/AddEmployee/AddEmployee';
+// import AddEmployee from './../pages/AdminDashboard/AddEmployee/AddEmployee';
 import AssetList from './../pages/AdminDashboard/AssetList/AssetList';
 import AddAsset from './../pages/AdminDashboard/AddAsset/AddAsset';
 import AllRequests from './../pages/AdminDashboard/AllRequests/AllRequests';
@@ -25,6 +25,7 @@ import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import UpdateAsset from "../pages/AdminDashboard/UpdateAsset/UpdateAsset";
 import UpdateCustomRequest from "../pages/EmployeeDashboard/UpdateCustomRequest/UpdateCustomRequest";
+import UpdateUserProfile from "../pages/UpdateUserProfile/UpdateUserProfile";
 
 const router = createBrowserRouter([
     {
@@ -89,10 +90,10 @@ const router = createBrowserRouter([
                 path: 'my-employee-list',
                 element: <AdminRoute><MyEmployeeList></MyEmployeeList></AdminRoute>
             },
-            {
-                path: 'add-employee',
-                element: <AdminRoute><AddEmployee></AddEmployee></AdminRoute>
-            },
+            // {
+            //     path: 'add-employee',
+            //     element: <AdminRoute><AddEmployee></AddEmployee></AdminRoute>
+            // },
             {
                 path: 'admin-profile',
                 element: <AdminRoute><AdminProfile></AdminProfile></AdminRoute>
@@ -127,6 +128,13 @@ const router = createBrowserRouter([
             {
                 path: 'employee-profile',
                 element: <EmployeeProfile></EmployeeProfile>
+            },
+
+            // Shared routes
+            {
+                path: 'update-user-profile/:id',
+                element: <UpdateUserProfile></UpdateUserProfile>,
+                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/user-profile-info/${params.id}`)
             }
         ]
     }

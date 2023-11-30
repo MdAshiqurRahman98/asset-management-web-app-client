@@ -64,13 +64,13 @@ const Dashboard = () => {
                     : ""
         }>My Employee List</NavLink></li>
 
-        <li className="mt-2 lg:ml-5 text-lg"><NavLink to="/dashboard/add-employee" className={({ isActive, isPending }) =>
+        {/* <li className="mt-2 lg:ml-5 text-lg"><NavLink to="/dashboard/add-employee" className={({ isActive, isPending }) =>
             isPending
                 ? "pending"
                 : isActive
                     ? "text-[#FF444A] text-lg font-bold"
                     : ""
-        }>Add an Employee</NavLink></li>
+        }>Add an Employee</NavLink></li> */}
 
         <li className="my-2 lg:ml-5 text-lg"><NavLink to="/dashboard/admin-profile" className={({ isActive, isPending }) =>
             isPending
@@ -268,7 +268,7 @@ const Dashboard = () => {
                                         </NavLink>
                                     </li>
 
-                                    <li className="text-lg mt-1">
+                                    {/* <li className="text-lg mt-1">
                                         <NavLink
                                             to="/dashboard/add-employee"
                                             className={({ isActive, isPending }) =>
@@ -281,7 +281,7 @@ const Dashboard = () => {
                                         >
                                             Add an Employee
                                         </NavLink>
-                                    </li>
+                                    </li> */}
 
                                     <li className="text-lg my-1">
                                         <NavLink
