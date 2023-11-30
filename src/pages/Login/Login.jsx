@@ -70,7 +70,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
 
-                const saveUser = { name: result.user.displayName, email: result.user.email };
+                const saveUser = { name: result.user.displayName, email: result.user.email, photoURL: result.user.photoURL };
 
                 axiosPublic.put(`/api/v1/users/${result.user.email}`, saveUser)
                     .then(res => {

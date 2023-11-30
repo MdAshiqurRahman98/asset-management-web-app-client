@@ -77,7 +77,7 @@ const MyAssets = () => {
             <Helmet>
                 <title>My Assets | DigitalHub</title>
             </Helmet>
-            <div className="mb-11 ml-11">
+            <div className="mb-11 md:ml-11">
                 <h3 className="text-3xl font-bold mb-11">My Assets</h3>
                 <div className="overflow-x-auto">
                     <table className="table table-zebra w-full">

@@ -53,7 +53,7 @@ const CustomRequestsList = () => {
             <Helmet>
                 <title>Custom Requests List | DigitalHub</title>
             </Helmet>
-            <div className="mb-11 ml-[9px]">
+            <div className="mb-11 md:ml-[9px]">
                 <h3 className="text-3xl font-bold mb-11">Custom Requests List</h3>
                 <div className="overflow-x-auto">
                     <table className="table table-zebra w-full">
@@ -77,18 +77,18 @@ const CustomRequestsList = () => {
                                     <td>{asset.assetPrice}</td>
                                     <td>{asset.assetType}</td>
                                     <td>
-                                        <img className="rounded-full w-9 h-9" src={asset.assetImage} alt="Image" />
+                                        <img className="rounded-full w-9 h-9 ml-3" src={asset.assetImage} alt="Image" />
                                     </td>
                                     <td>{asset.whyNeeded}</td>
                                     <td>{asset.additionalInfo}</td>
                                     <td>
                                         {
-                                            asset.status === 'approved' ? 'Approved' : <button onClick={() => handleRequestApprove(asset._id)} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Approve</button>
+                                            asset.status === 'approved' ? 'Approved' : <button onClick={() => handleRequestApprove(asset._id)} disabled={asset.status === 'returned'} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Approve</button>
                                         }
                                     </td>
                                     <td>
                                         {
-                                            asset.status === 'rejected' ? 'Rejected' : <button onClick={() => handleRequestReject(asset._id)} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Reject</button>
+                                            asset.status === 'rejected' ? 'Rejected' : <button onClick={() => handleRequestReject(asset._id)} disabled={asset.status === 'returned'} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Reject</button>
                                         }
                                     </td>
                                 </tr>)

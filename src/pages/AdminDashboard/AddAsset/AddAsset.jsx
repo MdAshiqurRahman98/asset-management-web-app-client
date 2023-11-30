@@ -54,7 +54,7 @@ const AddAsset = () => {
             <Helmet>
                 <title>Add an Asset | DigitalHub</title>
             </Helmet>
-            <div className="mb-11 ml-11">
+            <div className="mb-11 md:ml-11">
                 <h3 className="text-3xl font-bold mb-11">Add an Asset</h3>
                 <form onSubmit={handleAddAsset}>
                     {/* form email and product name row */}
