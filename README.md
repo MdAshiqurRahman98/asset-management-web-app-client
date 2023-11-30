@@ -12,13 +12,12 @@
 - View All Requests
 - View Custom Requests List
 - View Employee List
-- Add Employee
 - View Profile
 - View Team List
 - Request for Asset
 - Make Custom Request
 - User Authentication using Firebase and JWT
-- JWT Authentication on Private Route and Admin Route
+- JWT Authentication on Private Routes and Admin Routes
 
 ### Technologies which have been used in this app:
 
