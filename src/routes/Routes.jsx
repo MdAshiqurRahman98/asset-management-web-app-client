@@ -76,7 +76,7 @@ const router = createBrowserRouter([
             {
                 path: 'update-product/:id',
                 element: <AdminRoute><UpdateAsset></UpdateAsset></AdminRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/product/${params.id}`)
+                loader: ({ params }) => fetch(`https://asset-management-system-server-tau.vercel.app/api/v1/product/${params.id}`)
             },
             {
                 path: 'all-requests',
@@ -123,7 +123,7 @@ const router = createBrowserRouter([
             {
                 path: 'update-custom-request/:id',
                 element: <UpdateCustomRequest></UpdateCustomRequest>,
-                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/asset/${params.id}`)
+                loader: ({ params }) => fetch(`https://asset-management-system-server-tau.vercel.app/api/v1/asset/${params.id}`)
             },
             {
                 path: 'employee-profile',
@@ -134,7 +134,7 @@ const router = createBrowserRouter([
             {
                 path: 'update-user-profile/:id',
                 element: <UpdateUserProfile></UpdateUserProfile>,
-                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/user-profile-info/${params.id}`)
+                loader: ({ params }) => fetch(`https://asset-management-system-server-tau.vercel.app/api/v1/user-profile-info/${params.id}`)
             }
         ]
     }
