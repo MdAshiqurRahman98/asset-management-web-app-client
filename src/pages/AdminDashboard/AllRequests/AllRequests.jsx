@@ -79,12 +79,12 @@ const AllRequests = () => {
                                     <td>{asset.status}</td>
                                     <td>
                                         {
-                                            asset.status === 'approved' ? 'Approved' : <button onClick={() => handleRequestApprove(asset._id)} disabled={asset.status === 'returned'} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Approve</button>
+                                            asset.status === 'approved' || asset.status === 'returned' ? 'Approved' : <button onClick={() => handleRequestApprove(asset._id)} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Approve</button>
                                         }
                                     </td>
                                     <td>
                                         {
-                                            asset.status === 'rejected' ? 'Rejected' : <button onClick={() => handleRequestReject(asset._id)} disabled={asset.status === 'returned'} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Reject</button>
+                                            asset.status === 'rejected' ? 'Rejected' : <button onClick={() => handleRequestReject(asset._id)} className="btn btn-sm normal-case text-white bg-[#FF444A] hover:bg-[#FF444A]">Reject</button>
                                         }
                                     </td>
                                 </tr>)
