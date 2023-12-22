@@ -19,7 +19,7 @@ const EmployeeProfile = () => {
     return (
         <>
             <Helmet>
-                <title>Admin Profile | DigitalHub</title>
+                <title>Employee Profile | DigitalHub</title>
             </Helmet>
             <div className="mb-11 md:ml-11 text-center">
                 <h3 className="text-3xl font-bold mb-16">Your Profile</h3>
