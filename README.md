@@ -17,7 +17,7 @@
 - Request for Asset
 - Make Custom Request
 - User Authentication using Firebase and JWT
-- JWT Authentication on Private Routes and Admin Routes
+- JWT Authentication on Private Route and Admin Route
 
 ### Technologies which have been used in this app:
 
